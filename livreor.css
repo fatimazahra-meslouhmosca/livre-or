@@ -1,0 +1,76 @@
+
+.titre{
+    font-size: xx-large;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    text-align: center;
+}
+
+body{
+    background-color: black;
+}
+
+
+main{
+    background-image: url(https://dbdzm869oupei.cloudfront.net/img/vinylrugs/preview/26890.png);
+    background-repeat: no-repeat;
+    background-size: cover 800px;
+    background-position-x: center;
+    background-position-y: center;
+    height: 800px;
+    background-color: black;
+}
+
+.p{
+    color: white;
+    text-align: center;
+}
+
+p{
+    color: white;
+}
+
+h3{
+    color: white;
+
+}
+
+a{
+    color: white;
+}
+
+.footer{
+    display: flex;
+    justify-content: right;
+    margin-top: 150px;
+}
+
+
+td{
+    color: white;
+}
+
+#table{
+    display: flex;
+    justify-content: center;
+}
+
+aside{
+    
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    height: 100vh;
+    position: fixed;
+    justify-content: center;
+    margin-left: 3vw;
+}
+
+img{
+    height: 100px;
+    width: 100px;
+}
+
+.deco{
+    margin-top: 150px;
+}
