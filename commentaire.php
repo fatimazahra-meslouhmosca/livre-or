@@ -71,6 +71,9 @@ session_start();
 
 <tr>
     <td>
+    <h3>
+    Se déconnecter?
+</h3>
     <a class ="deco" href="deconnexion.php"> <input type="button" value= "Déconnexion"></a> <br></td>
 </tr>
 

@@ -60,8 +60,14 @@ else{
 
 }
 ?>
+<?php if (isset($_SESSION["login"])) : ?> 
 
+<h3>
+    Se déconnecter?
+</h3>
 <a class ="deco" href="deconnexion.php"> <input type="submit" value= "Déconnexion"></a>
+
+<?php endif ?>
 
 
     <footer>

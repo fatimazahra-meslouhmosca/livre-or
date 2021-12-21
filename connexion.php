@@ -5,36 +5,44 @@ $bdd= mysqli_connect('localhost', 'root','root', 'livreor');
 mysqli_set_charset($bdd, 'utf8');
 
 
-if (!empty($_POST['login']) && !empty($_POST['password'])){
+    if (!empty($_POST['login']) && !empty($_POST['password']) && isset($_POST["login"]) && isset($_POST["password"])){
 
-    $login = $_POST['login'];
-    $password = $_POST['password'];
-
-    $requete =  "SELECT * FROM utilisateurs WHERE login = '$login' AND password = '$password' ";
-
-
-    $requete2= mysqli_query($bdd, $requete);
-    $reponse = mysqli_fetch_all($requete2);
-
-    $count = count($reponse);
-
-
-            if ($count == 1){
-            
-                $_SESSION ['login'] = $login;
-                $_SESSION['password'] = $password;
-                $_SESSION['id'] = $reponse[0][0];
-
-            
-                header('location: profil.php');
-            
-            }
-
-            else {
-                echo "<p>Login et/ou password incorrects </p>";
-            }
+        $login = $_POST['login'];
+        $password = $_POST['password'];
+    
+        $requete =  "SELECT * FROM utilisateurs WHERE login = '$login' AND password = '$password' ";
+    
+    
+        $requete2= mysqli_query($bdd, $requete);
+        $reponse = mysqli_fetch_all($requete2);
+    
+        $count = count($reponse);
+    
+    
+                if ($count == 1){
+                
+                    $_SESSION ['login'] = $login;
+                    $_SESSION['password'] = $password;
+                    $_SESSION['id'] = $reponse[0][0];
+    
+                
+                    header('location: profil.php');
+                    exit();
+                
+                }
+    
+                else {
+                    echo "<p>Login et/ou password incorrects </p>";
+                }        
+        }
+    else {
+        if(!empty($_POST)){
+          echo "<p> Champs vides </p>";  
+        }
+        
     }
-   
+
+
 
 
 ?>
@@ -85,12 +93,23 @@ if (!empty($_POST['login']) && !empty($_POST['password'])){
 <input type="submit" name="submit" value="Envoyer"></td>
 </tr>
 
+<tr>
+<td>
+<h3>
+    Pas encore inscrit?
+</h3>
+
+<a class="boutton" href="inscription.php">Inscrivez-vous</a>
+</td>
+</tr>
+
+
+
+
 
 
 </form>
 </table>
-
-<a class ="deco" href="deconnexion.php"> <input type="submit" value= "Déconnexion"></a>
 
 </body>
 <main>

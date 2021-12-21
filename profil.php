@@ -4,7 +4,7 @@ session_start();
     $bdd= mysqli_connect('localhost', 'root','root','livreor');
     mysqli_set_charset($bdd, 'utf8');
     $user_login = $_SESSION['login'];
-   
+
     $requete = "SELECT * FROM utilisateurs WHERE login = '$user_login'";
     
     $requete = mysqli_query($bdd, $requete);
@@ -54,7 +54,7 @@ session_start();
     <td>
      <label for="login"> Modifier login :</td>
     <td>
-    <input type="login" name="login" id="login"></label> <br></td>
+    <input type="login" name="login" id="login" value ="<?php echo $_SESSION["login"] ?>"></label> <br></td>
 
 </tr>
 
@@ -63,7 +63,7 @@ session_start();
     <td>
     <label for="password"> Modifier mot de passe :</td>
     <td>
-    <input type="password" name="password" id="password"></label> <br></td>
+    <input type="password" name="password" id="password" value ="*******"></label> <br></td>
 
 </tr>
 
@@ -93,7 +93,9 @@ session_start();
 <main>
 
 </main>
-
+<h3>
+    Se déconnecter?
+</h3>
 <a class ="deco" href="deconnexion.php"> <input type="submit" value= "Déconnexion"></a>
 </html>
 

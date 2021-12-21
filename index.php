@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +21,8 @@
 
 <aside>
     <nav>
+<?php if (!isset($_SESSION["login"])) : ?> 
+
 <h3>
     Déja inscrit?
 </h3>
@@ -28,6 +35,29 @@
 </h3>
 
 <a class="boutton" href="inscription.php">Inscription</a>
+
+
+<h3>
+    Voir les commentaires :
+</h3>
+
+<a href="livre-or.php"> Livre d'or </a>
+
+<?php else : ?>
+
+<h3>
+    Voir les commentaires :
+</h3>
+
+<a href="livre-or.php"> Livre d'or </a>
+
+<h3>
+    Se déconnecter?
+</h3>
+<a class ="deco" href="deconnexion.php"> <input type="submit" value= "Déconnexion"></a>
+
+<?php endif ?>
+
 </nav>
 </aside>
 <h1 class= "titre">Centre de médecine chinoise de Marseille</h1>
